@@ -1,0 +1,26 @@
+
+
+<div *ngIf = product>
+
+  <h2>{{product.productName}}</h2>
+  <h5>created By: {{product.sellerName}}</h5>
+  <h5>Time Remaining: {{ product.time_remaining }}</h5>
+  <h4>{{product.description}}</h4>
+  <h3>Current Highest Bid:{{ product.topBid }}</h3>
+
+
+
+  <h3> Bid By: {{product.bidBy}}</h3>
+  
+
+  
+
+</div>
+
+<form (submit) = "onUpdate()">
+  <input type="text" placeholder="Your bid goes here" name = "pBid"
+  [(ngModel)]="newBid"
+  #pBid = 'ngModel'>
+  <input type="submit" value ="Bid!!!">
+
+</form>

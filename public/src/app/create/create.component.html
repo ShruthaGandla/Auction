@@ -1,0 +1,34 @@
+<p>
+  New Auction
+</p>
+<form (submit) = "onSubmit()" #formData = "ngForm">
+  
+  Product Name:<input type="text" name = "pName" 
+  required
+  minlength="4"
+  maxlength="24"
+  [(ngModel)]="product.productName"
+  #pName='ngModel' ><br>
+  
+  
+  Description: <input type="text" required name="pDescription"
+  minlength="11"
+  maxlength="24"
+  [(ngModel)]="product.description"
+  #pDescription='ngModel'><br>
+  
+   
+
+  Starting Bid: <input type="text" required name = "pBid"
+  [(ngModel)]="product.topBid"
+  #pBid = 'ngModel'
+  ><br>
+
+ End date: <input type="date" name="eDate" [max]="maxDate"
+ required
+ [(ngModel)]="product.endDate"
+ #eDate='ngModel' ><br>
+
+
+  <input type="submit" value = "Create Auction" [disabled]="!formData.form.valid">
+</form>

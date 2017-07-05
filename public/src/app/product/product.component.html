@@ -1,0 +1,30 @@
+<h1>Current Auctions </h1>
+
+<div *ngIf = user_name>
+  <h2>Hello {{ user_name}} </h2>
+
+</div>
+
+<div *ngIf = products>
+ <table>
+  <tr>
+    <th>Product</th>
+    <th>Seller</th>
+    <th>Top Bid</th>
+    <th>Time Remaining</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor='let product of products'>
+    <td><a [routerLink]="['/edit',product._id,user_name]">{{product.productName}}</a> </td>
+    <td>{{product.sellerName}}</td>
+    <td> {{product.topBid}} </td>
+    <td> {{product.time_remaining}}</td>
+    <td><button (click) = "delete(product._id)"> Delete </button></td>
+    
+    
+  </tr>
+</table>
+
+<a [routerLink]="['/create',user_name]">Create Auction</a>
+
+</div>
